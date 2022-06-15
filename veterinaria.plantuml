@@ -1,0 +1,111 @@
+@startuml Diagrama de classes uml
+
+title Clinica veterinaria
+
+class Usuario {
+    - login: String
+    - senha: String
+    - email: String
+    + construtor(login, senha)
+    + valida_login(): void
+}
+
+class Cliente {
+    + nome_dono: String
+    + cpf_dono: String
+    + endereco_dono: String
+    + telefone_dono: String
+    + usuario: Usuario
+    + construtor(nome_dono, cpf_dono, endereco_dono, telefone_dono, usuario)
+    + personaliza_perfil(): void
+    + altera_senha(): void
+}
+
+class Animal {
+    + tipo: String
+    + raça: String
+    + idade: Int
+    + peso: Double
+    + construtor(tipo, raça, idade, peso)
+}
+
+class Paciente {
+    + nome_pet: String
+    + descricao: String
+    + cliente: Cliente
+    + animal: Animal
+    + construtor(nome_pet, descricao, cliente, animal)
+    + registra_pet(): void
+}
+
+class Vacina {
+    + vacina_id: Int
+    + descricao_vacina: String
+    + tipo_vacina: String
+    + dose: Double
+    + construtor(vacina_id, descricao_vacina, tipo_vacina, dose)
+    + vacina_pet(): void
+}
+
+class Remedio {
+    + remedio_id: Int
+    + tipo_remedio: String
+    + descricao_remedio: String
+    + quantidade_remedio: Int
+    + construtor(remedio_id, tipo_remedio, descricao_remedio, quantidade_remedio)
+}
+
+class Acessorios {
+    + acessorio_id: Int
+    + tipo_acessorio: String
+    + descricao_acessorio: String
+    + preco_acessorio: Double
+    + quantidade_acessorio: Int
+    + animal: Animal
+    + construtor(acessorio_id, tipo_acessorio, descricao_acessorio, preco_acessorio, quantidade_acessorio, animal)
+}
+
+class Tratamento {
+    + tipo: String
+    + duracao: String
+    + paciente: Paciente
+    + vacina: Vacina
+    + remedio: Remedio
+    + construtor(tipo, duracao, paciente, vacina, remedio)
+    + realiza_receita(): void
+    + examina_paciente(): void
+}
+
+class Profissionais {
+    + matricula: Int
+    + nome_profissional: String
+    + especialidade: String
+    + tratamento: Tratamento
+    + construtor(matricula, nome_profissional, especialidade, tratamento)
+}
+
+class Pagamento {
+    + quantidade_total: Int
+    + valor_total: Double
+    + metodo_pagamento: String
+    + acessorios: Acessorios
+    + tratamento: Tratamento
+    + construtor(quantidade_total, valor_total, metodo_pagamento, acessorios, tratamento)
+    + finaliza_pagamento(): void
+    + valida_promocao(): void
+}
+
+Usuario <|-- Cliente
+Cliente <|-- Paciente
+Animal <|-- Paciente
+Animal <|-- Acessorios
+Tratamento *-- Paciente
+Tratamento *-- Profissionais
+Tratamento o-- Vacina
+Tratamento o-- Remedio
+Pagamento o-- Acessorios
+Pagamento <|-- Tratamento
+
+
+
+@enduml
