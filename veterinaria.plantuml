@@ -6,19 +6,20 @@ class Usuario {
     - login: String
     - senha: String
     - email: String
-    + construtor(login, senha)
+    + construtor(login, senha, email)
     + valida_login(): void
 }
 
 class Cliente {
-    + nome_dono: String
-    + cpf_dono: String
-    + endereco_dono: String
-    + telefone_dono: String
+    + nome: String
+    + cpf: String
+    + endereco: String
+    + telefone: String
     + usuario: Usuario
-    + construtor(nome_dono, cpf_dono, endereco_dono, telefone_dono, usuario)
+    + construtor(nome, cpf, endereco, telefone, usuario)
     + personaliza_perfil(): void
     + altera_senha(): void
+    + novo_cliente(): void
 }
 
 class Animal {
@@ -31,11 +32,11 @@ class Animal {
 
 class Paciente {
     + nome_pet: String
-    + descricao: String
+    + descricao_pet: String
     + cliente: Cliente
     + animal: Animal
-    + construtor(nome_pet, descricao, cliente, animal)
-    + registra_pet(): void
+    + construtor(nome_pet, descricao_pet, cliente, animal)
+    + registra_paciente(): void
 }
 
 class Vacina {
@@ -44,7 +45,6 @@ class Vacina {
     + tipo_vacina: String
     + dose: Double
     + construtor(vacina_id, descricao_vacina, tipo_vacina, dose)
-    + vacina_pet(): void
 }
 
 class Remedio {
@@ -53,16 +53,6 @@ class Remedio {
     + descricao_remedio: String
     + quantidade_remedio: Int
     + construtor(remedio_id, tipo_remedio, descricao_remedio, quantidade_remedio)
-}
-
-class Acessorios {
-    + acessorio_id: Int
-    + tipo_acessorio: String
-    + descricao_acessorio: String
-    + preco_acessorio: Double
-    + quantidade_acessorio: Int
-    + animal: Animal
-    + construtor(acessorio_id, tipo_acessorio, descricao_acessorio, preco_acessorio, quantidade_acessorio, animal)
 }
 
 class Tratamento {
@@ -97,13 +87,11 @@ class Pagamento {
 
 Usuario <|-- Cliente
 Cliente <|-- Paciente
-Animal <|-- Paciente
-Animal <|-- Acessorios
+Paciente --|> Animal
 Tratamento *-- Paciente
 Tratamento *-- Profissionais
 Tratamento o-- Vacina
 Tratamento o-- Remedio
-Pagamento o-- Acessorios
 Pagamento <|-- Tratamento
 
 
