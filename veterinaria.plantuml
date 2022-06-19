@@ -7,6 +7,9 @@ class Usuario {
     - senha: String
     - email: String
     + construtor(login, senha, email)
+    + novo_usuario(): void
+    + altera_senha(): void
+    + recupera_senha(): void
     + valida_login(): void
 }
 
@@ -17,8 +20,6 @@ class Cliente {
     + telefone: String
     + usuario: Usuario
     + construtor(nome, cpf, endereco, telefone, usuario)
-    + personaliza_perfil(): void
-    + altera_senha(): void
     + novo_cliente(): void
 }
 
@@ -36,7 +37,7 @@ class Paciente {
     + cliente: Cliente
     + animal: Animal
     + construtor(nome_pet, descricao_pet, cliente, animal)
-    + registra_paciente(): void
+    + registra_pet(): void
 }
 
 class Vacina {
@@ -66,12 +67,14 @@ class Tratamento {
     + examina_paciente(): void
 }
 
-class Profissionais {
+class Funcionario {
     + matricula: Int
     + nome_profissional: String
     + especialidade: String
     + tratamento: Tratamento
     + construtor(matricula, nome_profissional, especialidade, tratamento)
+    + registra_funcionario(): void
+    + consulta_funcionario(): void
 }
 
 class Pagamento {
@@ -88,7 +91,7 @@ Usuario <|-- Cliente
 Cliente <|-- Paciente
 Paciente --|> Animal
 Tratamento *-- Paciente
-Tratamento *-- Profissionais
+Tratamento *-- Funcionario
 Tratamento o-- Vacina
 Tratamento o-- Remedio
 Pagamento <|-- Tratamento
