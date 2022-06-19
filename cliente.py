@@ -1,17 +1,17 @@
 class Cliente: 
 
-  def __init__(self, nome, cpf, endereco, telefone, usuario):
+  def __init__(self, login, senha, email, nome, cpf, endereco, telefone, usuario):
+    super().__init__(login, senha, email)
     self.nome = nome
     self._cpf = cpf
     self.endereco = endereco
     self.telefone = telefone
     self.usuario = usuario
-
-  def personaliza_perfil(self):
-    return 'Alteração realizada!'
-
-  def altera_senha(self):
-    return 'Senha alterada!'
-
-  def novo_cliente(self):
-    return 'Registro concluído!'
+    
+  def novo_cliente():
+    return Cliente(
+      nome = input('Nome: '),
+      cpf = input('CPF: '),
+      endereco = input('Endereço: '),
+      telefone = input('Telefone: ')
+    )
