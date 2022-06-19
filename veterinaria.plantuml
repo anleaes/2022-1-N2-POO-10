@@ -78,9 +78,8 @@ class Pagamento {
     + quantidade_total: Int
     + valor_total: Double
     + metodo_pagamento: String
-    + acessorios: Acessorios
     + tratamento: Tratamento
-    + construtor(quantidade_total, valor_total, metodo_pagamento, acessorios, tratamento)
+    + construtor(quantidade_total, valor_total, metodo_pagamento, tratamento)
     + finaliza_pagamento(): void
     + valida_promocao(): void
 }

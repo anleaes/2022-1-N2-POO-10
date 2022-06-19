@@ -1,11 +1,11 @@
 class Cliente: 
 
   def __init__(self, nome, cpf, endereco, telefone, usuario):
-  self.nome = nome
-  self._cpf = cpf
-  self.endereco = endereco
-  self.telefone = telefone
-  self.usuario = usuario
+    self.nome = nome
+    self._cpf = cpf
+    self.endereco = endereco
+    self.telefone = telefone
+    self.usuario = usuario
 
   def personaliza_perfil(self):
     return 'Alteração realizada!'
