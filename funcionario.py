@@ -6,7 +6,7 @@ class Funcionario:
     self.especialidade = especialidade
     self.tratamento = tratamento
 
-  def registra_funcionario(self):
+  def registra_funcionario():
     return Funcionario(
       matricula = input('Matricula: '),
       nome_profissional = input('Nome: '),
