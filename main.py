@@ -1,18 +1,22 @@
 from menu import Menu
 from usuario import Usuario
+from animal import Animal
 
 print('Bem vindo a Clinica Master Pet!')
 print('Digite a opcao desejada: ')
 
 Menu.login_menu()
 
-print('Digite a opcao desejada: ')
+print('\nDigite a opcao desejada: ')
 
-Menu.animal_menu()
+#if Usuario._login == 'admin':
+#  Menu.admin_menu()
+#else:
+Menu.pet_menu()
 
 resp = print('Deseja encerrar a sessão? S/N')
 if (resp == 'S'):
-  Menu.login_menu()
+  exit()
 else:
-  Menu.animal_menu()
+  Menu.pet_menu()
 

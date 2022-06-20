@@ -12,14 +12,8 @@ class Usuario:
       email = input('E-mail: '),
     ) 
 
-  def altera_senha(self):
-    nova_senha = input('Nova senha: ')
-    self._senha = nova_senha
-    return 'Senha alterada!'
+  def altera_senha(nova_senha):
+    senha = nova_senha
 
-  def recupera_senha():
+  def recupera_senha(self):
     return self._senha
-
-  def valida_login(self):
-    if self._login != NULL:
-      return 'Login realizado com sucesso'

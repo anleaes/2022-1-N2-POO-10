@@ -10,7 +10,6 @@ class Usuario {
     + novo_usuario(): void
     + altera_senha(): void
     + recupera_senha(): void
-    + valida_login(): void
 }
 
 class Cliente {
@@ -38,6 +37,7 @@ class Paciente {
     + animal: Animal
     + construtor(nome_pet, descricao_pet, cliente, animal)
     + registra_pet(): void
+    + consulta_pet(): void
 }
 
 class Vacina {
@@ -63,7 +63,7 @@ class Tratamento {
     + vacina: Vacina
     + remedio: Remedio
     + construtor(tipo, duracao, paciente, vacina, remedio)
-    + realiza_receita(): void
+    + agenda_tratamento(): void
     + examina_paciente(): void
 }
 

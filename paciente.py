@@ -16,3 +16,6 @@ class Paciente:
       descricao_pet = input('Descricao: '),
       animal = 'Animal'
     ) 
+
+  def consulta_pet(self):
+    return self.nome_pet

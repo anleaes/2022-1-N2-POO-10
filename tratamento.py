@@ -9,7 +9,9 @@ class Tratamento:
   def agenda_tratamento():
     return Tratamento(
       tipo = input('Tipo: '),
-      duracao = input('Duracao: ')
+      duracao = input('Duracao: '),
+      paciente = 'paciente',
+      remedio = 'remedio'
     )
 
   def examina_paciente(self):
